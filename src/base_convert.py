@@ -1,5 +1,11 @@
 
 def base_convert(n,b):
+    '''
+    Base numbers converter
+    :param n:
+    :param b:
+    :return:
+    '''
     assert b in [2,10,16,36]
     result=''
     if b==2:
@@ -15,7 +21,7 @@ def base_convert(n,b):
             result += alphabet[i]
     return str(result)[2:]
 
-number = 0
+
 def trc(n):
     result=[]
     if n==0: result += str(0)
@@ -26,14 +32,15 @@ def trc(n):
         if x < 10: result += str(x)
         else: result += chr(x+87)
     return result
+
+
 alphabet='0123456789abcdefghijklmnopqrstuvwxyz'
 base36=''
+number = 782
 while number != 0:
     number, i = divmod(number, len(alphabet))
     base36 = alphabet[i] + base36
+
 print(base36)
-#print(trc(number))
-
-n,r=divmod(10,6)
-
+print(trc(2761))
 print(base_convert(299,36))

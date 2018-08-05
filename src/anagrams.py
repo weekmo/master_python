@@ -1,6 +1,3 @@
-f = "words.txt"
-
-
 # Anagrams more that at least 6
 def anagram(file_name):
     s1 = {i.rstrip('\n') for i in open(file_name, 'r')}
@@ -23,7 +20,7 @@ def print_sorted_anagrams(ana):
         print('\t',i)
 
 
-# Bingo Ex3.c
+# Bingo Ex3.c, print only words that has length 8
 def bingo(ana):
     sort = sorted(ana.values(), key=lambda x: len(x), reverse=True)
     for i in sort:
@@ -31,6 +28,7 @@ def bingo(ana):
             print('\t',i)
             break
 
+f = "../data/words.txt"
 print("Anagrams:")
 print_sorted_anagrams(anagram(f))
 print("Bingo")
